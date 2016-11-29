@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>HW 6</title>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div class="container" ng-controller="AppCtrl">
+		<h1>Leonard Velazquez</h1>
+		
+		<h2>Education</h2>
+		<hr>
+		<div ng-repeat="info in information | filter: {type: 'edu'}">
+		<p>Name of the School: {{info.school}}</p>
+		<p>Degree: {{info.degree}}</p> 
+		<p>Last Year Attended: {{info.last_year}}</p>
+		<hr>
+		</div>
+		
+		<h2>Skills</h2>
+		<div ng-repeat="info in information | filter: {type: 'skill'}">
+		<p>{{info.skill}}</p>
+		</div>
+		
+		<h2>Projects</h2>
+		<div ng-repeat="info in information | filter: {type: 'project'}">
+		<h4>{{info.title}}</h4>
+		<p>{{info.description}}</p>
+		</div>
+		
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="controllers/controller.js"></script>
+	</body>
+</html>
